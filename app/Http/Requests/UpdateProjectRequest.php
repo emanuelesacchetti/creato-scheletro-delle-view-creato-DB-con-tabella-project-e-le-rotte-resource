@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProjectRequest extends FormRequest
+class UpdateProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,10 +28,9 @@ class StoreProjectRequest extends FormRequest
             'content' => 'nullable|max:300',
             'date' => 'nullable|date',
             'cover_img' => 'min:10|max:255|url'
-
         ];
     }
-    
+
     public function messages()
     {
         return [

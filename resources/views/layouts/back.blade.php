@@ -30,15 +30,8 @@
                         @include('partials.sidebar')
                     </div>
                     <div class="col-10">
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                        @include('partials.errors')
+                        @include('partials.messages')
                         @yield('content')
                     </div>
                 </div>

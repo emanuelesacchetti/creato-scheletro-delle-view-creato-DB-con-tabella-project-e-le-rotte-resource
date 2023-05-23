@@ -19,8 +19,10 @@ class ProjectSeeder extends Seeder
         for($i=0;$i<10;$i++){
             $newProject = new Project();
             $newProject->title = $faker->sentence(4);
-            //$newProject->cover_img = $faker->string(10);
+            $newProject->date = $faker->dateTime();
+            $newProject->cover_img = 'https://picsum.photos/200/300';
             $newProject->slug = Str::slug($newProject->title, '-'); 
+            $newProject->content = $faker->text(100); 
             $newProject->save();
         }
     }

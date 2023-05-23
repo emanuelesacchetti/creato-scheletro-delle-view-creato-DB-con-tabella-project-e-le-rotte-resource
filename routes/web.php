@@ -29,7 +29,8 @@ Route::middleware(['auth', 'verified'])
         //rotta che richiama la funzione index di DashController per la URI root
         Route::get('/', [DashController::class, 'index'])->name('dashboard');
 
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)
+        ->parameters(['projects'=>'project:slug']);
     });
 
 
